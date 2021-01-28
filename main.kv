@@ -1,44 +1,65 @@
 <LoginTextField@MDTextField>:
     multiline: False
     mode: "rectangle"
+
+<LoginMDscreen>:
+    name: "login"
+    username: id_username.text
+    password: id_password.text
     
-ScreenManager:
+    MDGridLayout:
+        cols: 1
+        size_hint: None, None
+        size: ("300dp", "100dp")
+        pos_hint: {"center_x": .5, "center_y": .5}
+        spacing: "10dp"
+        
+        LoginTextField:
+            hint_text: "Username"
+            id: id_username
+            text: root.username
+            
+        LoginTextField:
+            hint_text: "Password"
+            id: id_password
+            password: True
+            text: root.password
+            
+        MDFillRoundFlatButton:
+            pos_hint: {"center_x": .5}
+            size_hint_x: .3
+            text: "Login"
+            on_release: root.on_login()
+    
+AppScreenManager:
     id: screen_manager
-    MDScreen:
-        name: "login"
-        MDGridLayout:
-            cols: 1
-            size_hint: None, None
-            size: ("300dp", "100dp")
-            pos_hint: {"center_x": .5, "center_y": .5}
-            spacing: "10dp"
-            LoginTextField:
-                hint_text: "Username"
-                id: username
-            LoginTextField:
-                hint_text: "Password"
-                id: password
-                password: True
-            MDFillRoundFlatButton:
-                pos_hint: {"center_x": .5}
-                size_hint_x: .3
-                text: "Login"
-                on_release: root.current = "main"
+    
+    LoginMDscreen:
+        id: login_screen
+    
     MDScreen:
         name: "main"
+        on_enter: bottom_nav._refresh_tabs()
+        
         MDBoxLayout:
             orientation: "vertical"
+            
             MDToolbar:
                 title: "Taxi Company"
+                
             MDBottomNavigation:
+                id: bottom_nav
+            
                 MDBottomNavigationItem:
                     name: "status"
                     text: "Status"
                     icon: "account"
+                    
                 MDBottomNavigationItem:
                     name: "zones"
                     text: "Zones"
                     icon: "scatter-plot-outline"
+                    
                 MDBottomNavigationItem:
                     name: "settings"
                     text: "Settings"
