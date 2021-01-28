@@ -21,7 +21,7 @@ class LoginMDscreen(MDScreen):
     
     def on_login(self):
         if self.username == "" or self.password == "":
-            toast("Please specify a Username and Password", duration=1.5)
+            toast("Please specify a Username and Password")
         else:
             self.manager.current = "main"
     
