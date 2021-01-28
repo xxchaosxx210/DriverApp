@@ -7,6 +7,7 @@ from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager
+from kivymd.toast import toast
 
 
 class AppScreenManager(ScreenManager):
@@ -19,9 +20,10 @@ class LoginMDscreen(MDScreen):
     password = StringProperty('')
     
     def on_login(self):
-        print(self.username)
-        print(self.password)
-        self.manager.current = "main"
+        if self.username == "" or self.password == "":
+            toast("Please specify a Username and Password", duration=1.5)
+        else:
+            self.manager.current = "main"
     
 
 class MainApp(MDApp):
@@ -30,6 +32,7 @@ class MainApp(MDApp):
         super().__init__(**kwargs)
         # tell kivymd what you theme you want for the App
         self.theme_cls.primary_palette = "Blue"
+        
         
 def main():
     MainApp().run()
