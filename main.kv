@@ -4,8 +4,8 @@
 
 <LoginMDscreen>:
     name: "login"
-    username: id_username.text
-    password: id_password.text
+    username: id_username.__self__.text
+    password: id_password.__self__.text
     
     MDGridLayout:
         cols: 1
@@ -17,13 +17,13 @@
         LoginTextField:
             hint_text: "Username"
             id: id_username
-            text: root.username
+            text: "username"
             
         LoginTextField:
             hint_text: "Password"
             id: id_password
             password: True
-            text: root.password
+            text: "password"
             
         MDFillRoundFlatButton:
             pos_hint: {"center_x": .5}
