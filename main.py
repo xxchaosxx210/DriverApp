@@ -5,7 +5,6 @@ __description__ = "Driver App prototype"
 
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
-from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager
 from kivymd.toast import toast
 
@@ -16,11 +15,8 @@ class AppScreenManager(ScreenManager):
 
 class LoginMDscreen(MDScreen):
     
-    username = StringProperty('')
-    password = StringProperty('')
-    
     def on_login(self):
-        if self.username == "" or self.password == "":
+        if self.ids["id_username"].text == "" or self.ids["id_password"].text == "":
             toast("Please specify a Username and Password")
         else:
             self.manager.current = "main"
