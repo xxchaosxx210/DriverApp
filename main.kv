@@ -26,3 +26,12 @@ ScreenManager:
                 on_release: root.current = "main"
     MDScreen:
         name: "main"
+        MDBoxLayout:
+            orientation: "vertical"
+            MDToolbar:
+            title: "Taxi Company"
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name: "status"
+                text: "Status"
+                icon: ""
