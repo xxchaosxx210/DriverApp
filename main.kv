@@ -1,0 +1,28 @@
+<LoginTextField@MDTextField>:
+    multiline: False
+    mode: "rectangle"
+    
+ScreenManager:
+    id: screen_manager
+    MDScreen:
+        name: "login"
+        MDGridLayout:
+            cols: 1
+            size_hint: None, None
+            size: ("300dp", "100dp")
+            pos_hint: {"center_x": .5, "center_y": .5}
+            spacing: "10dp"
+            LoginTextField:
+                hint_text: "Username"
+                id: username
+            LoginTextField:
+                hint_text: "Password"
+                id: password
+                password: True
+            MDFillRoundFlatButton:
+                pos_hint: {"center_x": .5}
+                size_hint_x: .3
+                text: "Login"
+                on_release: root.current = "main"
+    MDScreen:
+        name: "main"

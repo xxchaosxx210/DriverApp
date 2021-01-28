@@ -1,10 +1,15 @@
-from kivymd.app import App
-from kivymd.uix.screen
+from kivymd.app import MDApp
 
-class MainApp(App):
-    pass
+class MainApp(MDApp):
+    
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # tell kivymd what you theme you want for the App
+        self.theme_cls.primary_palette = "Teal"
+    
+    def on_start(self):
+        print(f"{self.root.current}")
         
-
 def main():
     MainApp().run()
 
