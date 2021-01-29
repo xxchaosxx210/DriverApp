@@ -44,7 +44,7 @@ ScreenManager:
             
             MDToolbar:
                 title: "Company"
-                right_action_items: [["account", lambda x: x],["settings-outline", lambda x: x]]
+                right_action_items: [["account", lambda x: x],["message-text-outline", lambda x: x],["settings-outline", lambda x: x]]
             
             MDBottomNavigation:
                 id: bottom_nav
@@ -53,6 +53,24 @@ ScreenManager:
                     name: "status"
                     text: "Status"
                     icon: "account"
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        ScrollView:
+                            size_hint: 1, 1
+                            scroll_type: ["bars"]
+                            bar_width: "40dp"
+                            id: sv
+                            MDBoxLayout:
+                                adaptive_height: True
+                                orientation: "vertical"
+                                MDLabel:
+                                    font_style: "Body2"
+                                    id: status_text
+                                    size_hint_y: None
+                                    height: self.texture_size[1]
+                                    text: "Status: Availible"
+                                    multiline: True
+                            
                     
                 MDBottomNavigationItem:
                     name: "zones"
