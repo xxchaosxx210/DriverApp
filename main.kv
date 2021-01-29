@@ -44,6 +44,7 @@ AppScreenManager:
             
             MDToolbar:
                 title: "Taxi Company"
+                right_action_items: [['account', lambda x: x], ['settings-outline', lambda x: x]]
                 
             MDBottomNavigation:
                 id: bottom_nav
@@ -57,8 +58,8 @@ AppScreenManager:
                     name: "zones"
                     text: "Zones"
                     icon: "scatter-plot-outline"
-                    
+                
                 MDBottomNavigationItem:
-                    name: "settings"
-                    text: "Settings"
-                    icon: "settings-outline"
+                    name: "map"
+                    text: "Map"
+                    icon: "map"
