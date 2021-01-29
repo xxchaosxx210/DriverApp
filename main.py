@@ -5,13 +5,8 @@ __description__ = "Driver App prototype"
 
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
-from kivy.uix.screenmanager import ScreenManager
 from kivymd.toast import toast
 from kivy.logger import Logger
-
-
-class AppScreenManager(ScreenManager):
-    pass
 
 #
 class LoginMDscreen(MDScreen):
@@ -28,14 +23,7 @@ class MainApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # tell kivymd what you theme you want for the App
-        self.theme_cls.primary_palette = "Blue"
-    
-    def on_account(self, *args):
-        Logger.info("DRIVER-APP: On Account pressed")
-    
-    def on_settings(self, *args):
-        Logger.info("DRIVER-APP: On Settings Pressed")
-        
+        self.theme_cls.primary_palette = "Blue"   
         
 def main():
     MainApp().run()

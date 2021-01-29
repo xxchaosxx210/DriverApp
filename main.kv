@@ -29,7 +29,7 @@
             text: "Login"
             on_release: root.on_login()
     
-AppScreenManager:
+ScreenManager:
     id: screen_manager
     
     LoginMDscreen:
@@ -44,7 +44,7 @@ AppScreenManager:
             
             MDToolbar:
                 title: "Taxi Company"
-                right_action_items: [['account', app.on_account], ['settings-outline', app.on_settings]]
+                left_action_items: [['account', lambda x: x], ['settings-outline', lambda x: x]]
                 
             MDBottomNavigation:
                 id: bottom_nav
