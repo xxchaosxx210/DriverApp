@@ -12,7 +12,7 @@ from kivymd.toast import toast
 class AppScreenManager(ScreenManager):
     pass
 
-
+#right_action_items: [['account', lambda x: x], ['settings-outline', lambda x: x]]
 class LoginMDscreen(MDScreen):
     
     def on_login(self):
@@ -27,7 +27,10 @@ class MainApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # tell kivymd what you theme you want for the App
-        self.theme_cls.primary_palette = "Blue"
+        try:
+            self.theme_cls.primary_palette = "Blue"
+        except ReferenceError:
+            print("self.theme_cls fucked up")
         
         
 def main():
