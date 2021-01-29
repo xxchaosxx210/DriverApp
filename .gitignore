@@ -122,3 +122,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# paint.net project
+.pdn
+
+# Wing Professional Project
+.wpr
