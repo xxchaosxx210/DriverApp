@@ -124,7 +124,7 @@ dmypy.json
 .pyre/
 
 # paint.net project
-splash.pdn
+*.pdn
 
 # Wing Professional Project
-driverapp.wpr
+*.wpr
