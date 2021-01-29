@@ -7,12 +7,13 @@ from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.uix.screenmanager import ScreenManager
 from kivymd.toast import toast
+from kivy.logger import Logger
 
 
 class AppScreenManager(ScreenManager):
     pass
 
-#right_action_items: [['account', lambda x: x], ['settings-outline', lambda x: x]]
+#
 class LoginMDscreen(MDScreen):
     
     def on_login(self):
@@ -28,6 +29,12 @@ class MainApp(MDApp):
         super().__init__(**kwargs)
         # tell kivymd what you theme you want for the App
         self.theme_cls.primary_palette = "Blue"
+    
+    def on_account(self, *args):
+        Logger.info("DRIVER-APP: On Account pressed")
+    
+    def on_settings(self, *args):
+        Logger.info("DRIVER-APP: On Settings Pressed")
         
         
 def main():
