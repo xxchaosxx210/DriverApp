@@ -27,10 +27,7 @@ class MainApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # tell kivymd what you theme you want for the App
-        try:
-            self.theme_cls.primary_palette = "Blue"
-        except ReferenceError:
-            print("self.theme_cls fucked up")
+        self.theme_cls.primary_palette = "Blue"
         
         
 def main():
