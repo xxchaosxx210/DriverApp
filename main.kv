@@ -15,19 +15,19 @@
         LoginTextField:
             hint_text: "Username"
             id: id_username
-            text: ""
+            text: "steve79"
             
         LoginTextField:
             hint_text: "Password"
             id: id_password
             password: True
-            text: ""
+            text: "mole106"
             
         MDFillRoundFlatButton:
             pos_hint: {"center_x": .5}
             size_hint_x: .3
             text: "Login"
-            on_release: root.on_login()
+            on_release: root.on_login_button()
     
 ScreenManager:
     id: screen_manager
